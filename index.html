@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lida_SHOP — швидке замовлення</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg1:#ffe8f3;
+  --bg2:#e9f0ff;
+  --card: rgba(255,255,255,.78);
+  --border: rgba(20,20,40,.10);
+  --shadow: 0 14px 40px rgba(28, 16, 60, .12);
+  --text:#1f1f2a;
+  --muted:#5b5b73;
+  --grad: linear-gradient(135deg, #6a5cff 0%, #b66dff 55%, #ff7ac8 100%);
+  --grad2: linear-gradient(135deg, #5b7cff 0%, #7e63ff 55%, #d26bff 100%);
+  --radius: 22px;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: Inter, system-ui, Arial;
+  color:var(--text);
+  background:
+    radial-gradient(100% 600px at 15% 10%, rgba(255,122,200,.35), transparent 55%),
+    radial-gradient(100% 600px at 90% 25%, rgba(106,92,255,.30), transparent 60%),
+    linear-gradient(90deg, var(--bg1), var(--bg2));
+}
+
+.container{
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 18px 18px 26px;
+}
+
+.top{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding: 14px 14px 10px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.55);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+  backdrop-filter: blur(10px);
+}
+
+.brand{
+  flex:1;
+}
+.brand h1{
+  margin:0;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+.brand p{
+  margin:4px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.logoBadge{
+  width:64px;height:64px;
+  border-radius: 18px;
+  display:grid;
+  place-items:center;
+  background: var(--grad);
+  box-shadow: 0 12px 26px rgba(106,92,255,.25);
+}
+
+.section{
+  margin-top: 14px;
+  padding: 16px;
+  border-radius: var(--radius);
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.section h2{
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: .1px;
+}
+.small{
+  margin:0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.small b{ color: var(--text); }
+
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.65);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.btn{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  width:100%;
+  margin-top: 12px;
+  padding: 15px 16px;
+  border-radius: 16px;
+  text-decoration:none;
+  color:#fff;
+  font-weight: 800;
+  letter-spacing: .2px;
+  background: var(--grad2);
+  box-shadow: 0 14px 30px rgba(94, 92, 255, .22);
+  transition: transform .15s ease, filter .15s ease;
+}
+.btn:active{ transform: scale(.985); filter: brightness(.98); }
+
+.btn.secondary{
+  background: var(--grad);
+}
+
+.hr{
+  height:1px;
+  background: rgba(0,0,0,.08);
+  margin: 12px 0;
+}
+
+.list{
+  margin:0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.65;
+  font-size: 14px;
+}
+.list b{ color: var(--text); }
+
+.note{
+  margin-top: 10px;
+  padding: 12px 12px;
+  border-radius: 16px;
+  background: rgba(106,92,255,.08);
+  border: 1px solid rgba(106,92,255,.16);
+  color: #3a3a52;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.footer{
+  text-align:center;
+  margin-top: 14px;
+  color: rgba(40,40,60,.55);
+  font-size: 12px;
+}
+
+.icon{
+  width:18px;height:18px;display:inline-block;
+}
+html{
+  height: 100%;
+  background: #f6f7fb00; /* страховка */
+}
+
+body{
+  min-height: 100vh;
+  margin: 0;
+
+  background:
+    radial-gradient(100% 100% at 15% 10%, rgba(255,122,200,.35), transparent 60%),
+    radial-gradient(100% 100% at 90% 25%, rgba(106,92,255,.30), transparent 60%),
+    linear-gradient(180deg, var(--bg1), var(--bg2));
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+</style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="top">
+      <div class="logoBadge" aria-hidden="true">
+        <!-- minimalist bags icon -->
+        <svg width="38" height="38" viewBox="0 0 100 100" fill="none">
+          <g stroke="white" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+            <path d="M24 40h32v46a8 8 0 0 1-8 8H32a8 8 0 0 1-8-8V40z"/>
+            <path d="M46 48h32v38a8 8 0 0 1-8 8H54a8 8 0 0 1-8-8V48z"/>
+            <path d="M33 40c0-12 14-12 14 0"/>
+            <path d="M55 48c0-12 14-12 14 0"/>
+          </g>
+        </svg>
+      </div>
+      <div class="brand">
+        <h1>Lida_SHOP</h1>
+        <p>Без переплат • Швидке замовлення</p>
+      </div>
+    </div>
+
+    <!-- Viber main -->
+
+
+    <!-- TikTok instruction -->
+    <div class="section">
+      <h2>🔔 Увага, якщо ви зайшли з TikTok</h2>
+      <p class="small">
+        <b>1.</b> Вгорі ↗️ натисніть три крапки «●●●»<br>
+        → далі вниз:<br>
+        <b>«Відкрити в браузері»</b>
+      </p>
+      <div class="note">
+        Якщо кнопка Viber не відкривається — відкрийте сторінку в браузері (Safari/Chrome) і спробуйте ще раз.
+      </div>
+    </div>
+
+        <div class="section">
+      <h2>📸 Скріншоти сюди</h2>
+      <p class="small">Відкрити чат Viber: <b>+380 (50) 749-93-19</b></p>
+
+      <div class="pill">🟣 Натисніть кнопку нижче — відкриється Viber</div>
+
+      <a class="btn" href="viber://chat?number=380507499319">
+        Написати у Viber
+      </a>
+    </div>
+    <!-- Shoes order -->
+    <div class="section">
+      <h2>👟 Замовлення взуття</h2>
+      <p class="small">Viber: <b>+380 (95) 691 88 74</b></p>
+
+      <a class="btn secondary" href="viber://chat?number=380956918874">
+        Замовити взуття
+      </a>
+    </div>
+    <!-- Payment & Delivery -->
+    <div class="section">
+      <h2>💳 Умови оплати та доставки</h2>
+
+      <div class="pill">✅ Варіанти оплати</div>
+      <ul class="list">
+        <li>Повна передплата (100%)</li>
+      </ul>
+
+      <div class="hr"></div>
+
+      <div class="pill">🚚 Доставка по Україні</div>
+      <ul class="list">
+        <li>Відправка <b>Новою Поштою</b></li>
+        <li>Термін відправки: <b>1–3 робочі дні</b> після оформлення</li>
+      </ul>
+
+      <div class="hr"></div>
+
+      <div class="pill">♻️ Обмін та повернення</div>
+      <p class="small"><b>Обмін та повернення не передбачені.</b></p>
+    </div>
+
+
+
+    <!-- Community -->
+    <div class="section">
+      <h2>🟣 Viber-спільнота</h2>
+      <p class="small">Приєднуйтесь, щоб першими бачити новинки та наявність.</p>
+
+      <a class="btn" href="https://invite.viber.com/?g2=AQBKsQJX5JUAuFV%2BR1uPM1WsVtEqT2F8178D26Sl8a%2FB19gF%2BfX8MTZBtN4yYEop">
+        Приєднуйтесь на канал спільноти
+      </a>
+    </div>
+    <div class="section">
+        <p class="small">✨ Дякуємо за розуміння та відповідальність при покупці! Ми дбаємо про ваш комфорт і якість кожного замовлення 💛</p>
+    </div>
+
+    <div class="footer">© Lida_SHOP</div>
+
+  </div>
+</body>
+</html>
